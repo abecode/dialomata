@@ -25,8 +25,7 @@ class State(): # pylint: disable=too-few-public-methods
         return "State:%s" %self.name
 
 
-#class GPDA(nx.MultiDiGraph):
-class GPDA(nx.DiGraph):
+class GPDA(nx.MultiDiGraph):
     """
     a generalized push down automata
 
@@ -127,10 +126,12 @@ class GPDA(nx.DiGraph):
         #catch special commands here
         self.process_global_command(input_)
         for neighbor in self[self.state]:   #check neighbor states
-            if self[self.state][neighbor]['test'](input_):
-                output = self[self.state][neighbor]['function'](input_)
-                self.set_state(neighbor)
-                return output
+            for edge in self[self.state][neighbor]:
+                if self[self.state][neighbor][edge]['test'](input_):
+                    #print(self.state, neighbor, edge)
+                    output = self[self.state][neighbor][edge]['function'](input_)
+                    self.set_state(neighbor)
+                    return output
         raise GPDAError("no valid transition using input %s\n"
                         "given current state %s\n" 
                         "and neighbors: %s\n"
