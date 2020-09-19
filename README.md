@@ -15,5 +15,5 @@ python -m pytest
 
 run the doctests in gpda.py
 ```
-python gpda.py
+python dialomata/gpda.py
 ```
