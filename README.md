@@ -3,7 +3,7 @@
 A library for creating dialog systems using generalized pushdown
 automata.
 
-![](dialomata.jpg)
+![](dialomata.jpg | height=100)
 
 
 Read this in other languages: [English](README.md),[中
