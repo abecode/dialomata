@@ -33,3 +33,9 @@ run the doctests in gpda.py
 ```
 python dialomata/gpda.py
 ```
+
+## Naming Inspiration
+
+Socrates, the patron philosopher of dialog, and
+Automatia/Fortuna/Tyche, the patron goddess of games of chance and luck, get
+together and have a kid whose name is Dialomata.
